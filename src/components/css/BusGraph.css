@@ -1,0 +1,12 @@
+.barchart2 canvas {
+    display: block;
+    width: 420px !important;
+    height: 300px !important;
+    margin: 0 auto;
+}
+@media screen and(max-width:1024px) {
+    .barchart2 canvas{
+        height: 300px !important;
+        width: 420px !important;
+    }
+}

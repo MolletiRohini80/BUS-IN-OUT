@@ -1,0 +1,156 @@
+.total {
+    width: 100%;
+    height: 90svh;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wdiv {
+    width: 50%;
+    height: 70%;    
+    /* background-color: rgb(68, 7, 7); */
+    padding: 20px;
+    position: relative;
+    overflow: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1; /* Updated z-index */
+}
+
+.header1 {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Changed from space-evenly */
+    position: relative; /* To manage positioning of close button */
+}
+
+.head {
+    width: 90%;
+    height: 100%;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 37px;
+    font-weight: 700;
+}
+
+.head2 {
+    width: auto; /* Let the size adjust based on content */
+    height: auto; /* Same for height */
+    color: black;
+    font-size: 32px;
+    position: absolute;
+    right: -2%; /* More control over positioning */
+    top: -48%; /* Adjust top positioning */
+    cursor: pointer;
+    z-index: 10; /* Bring it above other elements */
+}
+.wdiv2 {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.photos {
+    width: 45%;
+    height: 95%;
+    /* background-color: black; */
+}
+
+.photo1, .photo2 {
+    width: 100%;
+    height: 50%;
+    background-size: 100% 100%;
+    border-radius: 10px;
+}
+
+.photo1 {
+    /* background-color: rebeccapurple; */
+    /* background-image: url('.././public/Cotton bhavan.png'); */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.photo2 {
+    /* background-color: rgb(114, 100, 128); */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* background-image: url('.././public/cbhavan.webp'); */
+    margin-top: 14px;
+}
+
+.matter {
+    width: 50%;
+    height: 100%;
+    /* background-color: red; */
+}
+.matter h1{
+    margin-top: 10%;
+    margin-bottom: 4%;
+}
+.matter p{
+    margin-bottom: 4%;
+}
+.photo1 img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+
+}
+.photo2 img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+
+}
+li{
+    margin-left: 8%;
+}
+@media screen and (max-width:800px){
+    .head{
+        font-size: 27px;
+    }
+    .wdiv{
+        width: 80%;
+    }
+    li{
+        margin-left: 10%;
+    }
+}
+@media screen and (max-width:500px){
+    .wdiv{
+        width: 90%;
+        height: 60%;
+    }
+    .head{
+        font-size: 25px;
+    }
+    .matter h1,h2{
+        font-size: 22px;
+    }
+    .matter p,li{
+        font-size: 13px;
+    }
+    li{
+        margin-left: 18%;
+    }
+}
+@media screen and (max-width:320px){
+    .head{
+        font-size: 18px;
+    }
+    .matter h1,h2{
+        font-size: 18px;
+    }
+    li{
+        margin-left: 22%;
+    }
+    .photos{
+        height: 70%;
+    }
+}

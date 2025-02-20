@@ -1,0 +1,277 @@
+/* Main layout */
+.p1 {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    justify-content: center;
+}
+
+.p2 {
+    width: 100%;
+    height: 17%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.p3 {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p4 {
+    width: 80%;
+    height: 50%;
+    /* background-color: red; */
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: 49px;
+    text-align: center;
+    justify-content: center;
+    /* text-shadow: 1px 1px; */
+}
+
+.p5 {
+    width: 100%;
+    height: 123%;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.p6 {
+    width: 80%;
+    height: 95%;
+    /* background-color: blanchedalmond; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+/* Card styling */
+.p7 {
+    width: 25%;
+    height: 37%;
+    border: 1px solid rgb(201, 200, 200);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 20px; /* Add space at the top of each card */
+    margin: 40px; /* Add space around the cards */
+    box-shadow: 2px 2px 6px #7c7b7b; /* Optional: Card shadow */
+}
+.p7:hover{
+    transform: scale(1.1);  
+}
+.circle1{
+    width: 65px;
+    height: 65px;
+    border-radius: 100%;
+    border: 1px solid black;
+    background-color: white;
+    position: relative;
+    bottom: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    /* left: 95px; */
+}
+.bname{
+    width: 80%;
+    height: 10%;
+    /* border: 1px solid red; */
+    position: relative;
+    bottom: 48px;
+    display: flex;
+    color: #FD752C;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.but1{
+    border-radius: 60px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid whitesmoke;
+    background-color: #FD752C;
+    color: white;
+    cursor: pointer;
+}
+.bmatter{
+    width: 80%;
+    height: 29%;
+    /* border: 1px solid blue; */
+    position: relative;
+    bottom: 25px;
+    display: flex;
+    color: #002147;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.learnmore{
+    width: 40%;
+    height: 10%;
+    /* border: 1px solid #002147; */
+    border-radius: 16px;
+    position: relative;
+    bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Responsive design using media queries */
+
+/* For screens smaller than 1024px (tablets and small laptops) */
+@media (max-width: 1024px) {
+    .p2{
+        height: 10%;
+    }
+    .p3{
+        width: 80%;
+    }
+    .p4{
+        font-size: 35px !important;
+    }
+    .p4 {
+        font-size: 44px; /* Reduce font size */
+    }
+    .bname{
+        font-size: 22px !important;
+    }
+    .p7{
+        width: 35%;
+        /* height: 40%; */
+    }
+    .bmatter{
+        font-size: 14px !important;
+    }
+    .circle{
+        width: 65px;
+        height: 65px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .p2{
+        height: 5%;
+    }
+    .p3{
+        width: 80%;
+    }
+    .p4{
+        font-size: 28px !important;
+    }
+    .p4 {
+        font-size: 32px; /* Further reduce title font size */
+    }
+
+    .p6 {
+        width: 90%; /* Reduce the container width */
+    }
+    .p7{
+        width: 37%;
+        height: 40%;
+    }
+    .bname{
+        font-size: 20px !important;
+    }
+    .bmatter{
+        font-size: 12px !important;
+    }
+    .circle{
+        bottom: 80px;
+    }
+}
+/* For screens smaller than 480px (very small mobile devices) */
+@media (max-width: 500px) {
+    .p2{
+        height: 5%;
+    }
+    .p3{
+        width: 80%;
+    }
+    .p4{
+        font-size: 28px !important;
+    }
+    .p7{
+        width: 65% !important;
+    }
+    .bname{
+        font-size: 19px !important;
+    }
+    .bmatter{
+        font-size: 12px !important;
+    }
+    .circle{
+        bottom: 100px;
+    }
+}
+
+@media (max-width: 400px) {
+    .p2{
+        height: 5%;
+    }
+    .p3{
+        width: 80%;
+    }
+    .p4{
+        font-size: 28px !important;
+    }
+    .p7{
+        width: 68% !important;
+        height:45%;
+    }
+    .bname{
+        font-size: 18px !important;
+    }
+    .bmatter{
+        font-size: 11px !important;
+    }
+}
+@media (max-width: 350px) {
+    .p2{
+        height: 8%;
+    }
+    .p3{
+        width: 70%;
+    }
+    .p4{
+        /* font-size: 91% !important; */
+       font-size: 25px !important;
+    }
+    .p7{
+        width: 70% !important;
+        height:40%;
+    }
+    .bname{
+        font-size: 15px !important;
+    }
+    .bmatter{
+        font-size: 9px !important;
+    }
+    .learnmore{
+        height:13%;
+        width:45%;
+    }
+    .circle{
+        margin-top: 15%;
+    }
+}
+  
+
+

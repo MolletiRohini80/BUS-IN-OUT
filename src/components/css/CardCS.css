@@ -1,0 +1,317 @@
+/* Base Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f9fc;
+  /* overflow: hidden; */
+}
+
+/* Outer Container with Heading */
+.outer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* Distribute heading and cards evenly */
+  align-items: center;
+  height: 100svh; /* Full viewport height */
+  width: 100vw;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevents overflow */
+}
+
+/* Heading Styling */
+.heading {
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+  color: #2c3e50;
+  text-align: center;
+  font-weight: bold;
+  animation: slideInFromTop 1s ease-out;
+}
+
+/* Animation for heading */
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Centering Container with Grid of Cards */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  height: 85%; /* Takes up most of the 100svh minus heading */
+  justify-items: center;
+  align-items: center;
+  animation: fadeIn 1s ease-in-out;
+  overflow: hidden;
+}
+
+/* Animation for the container */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Card Styling - Fit to 100svh */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  color: #34495e;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+  cursor: pointer;
+  animation: popUp 0.6s ease forwards;
+  transform: translateY(50px);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%; /* Responsive width within grid */
+  height: 100%; /* Ensure consistent height */
+}
+
+/* Staggered animation for each card */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+.card:nth-child(6) { animation-delay: 0.6s; }
+.card:nth-child(7) { animation-delay: 0.7s; }
+.card:nth-child(8) { animation-delay: 0.8s; }
+.card:nth-child(9) { animation-delay: 0.9s; }
+
+/* Animation for cards */
+@keyframes popUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Card Hover Animation */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Content */
+.card h2 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: #002147 ;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Button Styling */
+.card button {
+  padding: 10px 20px;
+  background-color: #FD752C;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  outline: none;
+  /* margin-top: 10px; */
+  width:45%;
+  margin-left: 30%;
+}
+
+/* Button Hover Effect */
+.card button:hover {
+  background-color: #1a73e8;
+  transform: scale(1.08);
+}
+
+/* Responsive Layout Adjustments */
+
+/* Adjust for 1024px width */
+@media screen and (max-width: 1440px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  }
+  .card {
+    width: 80%; /* Adjust width for a more compact look */
+    height: 160px; /* Adjust height to make it consistent */
+    padding: 10px;
+    margin-bottom: -5%;
+  
+  }
+  
+}
+/* Adjust for 1024px width */
+@media screen and (max-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+    gap: 2%;
+     /* 3% gap between cards */
+     
+  }
+
+  .card {
+    width: 90%; /* Make each card take full available space within its grid cell */
+    height: 180px; /* Ensure consistent height for each card */
+    padding: 10px;
+    
+  }
+  .card button{
+    width:55%;
+    margin-left: 25%;
+  }
+
+}
+
+
+/* Adjust for 768px width */
+/* @media screen and (min-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr); 
+
+  }
+  .outer-container{
+    height:95%;
+  }
+  .card {
+    padding-left: 0.1px;
+    padding-top: 0.2%;
+    width:70%;
+    height:100%;
+  }
+} */
+/* Adjust for 768px width */
+@media screen and (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr); /* 2 cards per row */
+  }
+
+  .card {
+    width: 80%; /* Adjust width for a more compact look */
+    height: 120px; /* Adjust height to make it consistent */
+    padding: 10px;
+  
+  }
+
+  .outer-container {
+    height: 95%; /* Slightly adjust the container height */
+  }
+  .card button{
+    width:60%;
+    margin-left: 20%;
+  }
+}
+/* Adjust for 425px width */
+@media screen and (max-width: 429px) {
+  .card-container {
+    grid-template-columns: repeat(2,1fr); /* 2 cards per row */
+    gap: 4%; /* 5% gap around cards */
+    padding: 5%; /* Padding around the entire container for a neat look */
+  }
+
+  .card {
+    width: 70%; /* Take full space within the grid cell */
+    height: 100px; /* Ensure consistent height for each card */
+    padding: 10px;
+  }
+
+  .card h2 {
+    font-size: 1.1rem; /* Slightly smaller heading for better fit */
+  }
+
+  .card button {
+    font-size: 0.6rem;
+    padding: 7px 16px;
+    width: 70%; /* Make the button fit well within the smaller screen */
+    margin-left: 20%;
+  }
+  .outer-container {
+    height: 100%; /* Slightly adjust the container height */
+  }
+}
+
+
+
+/* Adjust for 425px width */
+/* @media screen and (max-width: 429px) {
+  .card-container {
+    grid-template-columns: 1fr 1fr; /* 1 card per row */
+  /* }
+  .card {
+    padding-left: 0.1px;
+    padding-top: 0.2%;
+  }
+  .card h2 {
+    font-size: 1.2rem;
+  }
+  .card button {
+    font-size: 0.8rem;
+    padding: 7px 16px;
+    width:65%;
+    margin-left: 22%;
+  }
+  .outer-container{
+    height:96%;
+  } */
+/* } */ 
+
+/* Adjust for 375px width */
+/* @media screen and (max-width: 379px) {
+  .card-container {
+    grid-template-columns: 1fr 1fr; 
+  }
+  .card {
+    padding: 8px;
+  }
+  .card h2 {
+    font-size: 1.1rem;
+  }
+  .card button {
+    font-size: 0.7rem;
+    padding: 7px 16px;
+    width:65%;
+    margin-left: 22%;
+    margin-bottom: 5%;
+  }
+  .heading{
+    margin-top: 5%;
+  }
+} */
+
+ @media screen and (max-width: 320px) {
+
+  .card button {
+    font-size: 0.4rem;
+    /* padding: 6px 14px; */
+    margin-bottom: 10%;
+    margin-left: 20%;
+    width:60%;
+  }
+}

@@ -1,0 +1,122 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.attract_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.attract_heading {
+  font-size: 2vw;
+  color: #FD752C;
+  font-weight: bold;
+  margin-top: 2%;
+  text-align: center;
+  opacity: 0; /* Start invisible */
+  animation: fadeInSlideDown 1s ease-out forwards; /* Adding slide and fade animation */
+}
+
+/* Keyframes for fading in and sliding down */
+@keyframes fadeInSlideDown {
+  0% {
+    opacity: 0; /* Invisible at the start */
+    transform: translateY(-30px); /* Start 30px above */
+  }
+  100% {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* In its final position */
+  }
+}
+
+
+.attract_content {
+  font-size: 1.3vw;
+  color: #002147;
+  text-align: center;
+  margin: 2% 10%;
+}
+
+.attract_image-collage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 80%;
+  height: 800px;
+  animation: slideIn 1s ease-out forwards;
+  margin-top:-3%;
+}
+
+/* Keyframes for sliding in from the left */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%); /* Start from outside the screen (left) */
+  }
+  100% {
+    transform: translateX(0); /* Stop at the center */
+  }
+}
+.attract_hex {
+  width: 300px; 
+  height: 250px; 
+  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+.attract_hex1 {
+  top: 5%;
+  left: 50.3%;
+  transform: translate(-50%, 0%);
+  background-image: url('/app2_pic10.png');
+}
+
+.attract_hex2 {
+  top: 35%;
+  left: 31%;
+  transform: translate(-50%, -50%);
+  background-image: url('/app2_pic11.png');
+}
+
+.attract_hex4 {
+  top: 63%;
+  left: 31%;
+  transform: translate(-50%, -50%);
+  background-image: url('/app2_pic12.png');
+}
+
+.attract_hex3 {
+  top: 35.2%;
+  right: 28.1%;
+  transform: translate(50%, -50%);
+  background-image: url('/app2_pic7.jpeg');
+}
+
+.attract_hex5 {
+  top: 63.5%;
+  right: 28.5%;
+  transform: translate(50%, -50%);
+  background-image: url('/app2_pic8.png');
+}
+
+.attract_hex6 {
+  top: 49%;
+  left: 50.2%;
+  transform: translate(-50%, -50%);
+  background-image: url('/app2_pic5.png');
+}
+
+.attract_hex7 {
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-image: url('/app2_pic6.png');
+}
+
+

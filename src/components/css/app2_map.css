@@ -1,0 +1,276 @@
+* {
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.map_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
+.map_title {
+  font-size: 2.5vw;
+  font-weight: bold;
+  color: #002147;
+  margin-bottom: 3%;
+  text-align: center;
+}
+
+.map_layout {
+  position: relative;
+  width: 80%;
+  height: 600px; 
+  background-color: #e0f7fa; 
+  border: 2px solid #00796b; 
+  border-radius: 10px; 
+  background-image: url('./map1.jpg');
+  
+
+}
+
+.map_location {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  position: absolute; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.map_location:hover::after {
+  content: attr(title);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #00796b; 
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 10px;
+  white-space: nowrap;
+}
+
+.map_location:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.entrance {
+  background-image: url('/app2_adityalogo.jpg');
+  bottom: 5%;
+  left: 55%;
+}
+
+.emblem {
+  background-image: url('/app2_pic5.png');
+  bottom: 45%; 
+  left: 55%;
+}
+
+.campus1 {
+  background-image: url('/app2_pic1.png');
+  bottom: 84%; 
+  left: 5%; 
+}
+
+.campus2 {
+  background-image: url('/app2_ramanujan.jpg');
+  bottom: 70%;
+  left: 18%;
+}
+
+.campus3 {
+  background-image: url('/app2_vis.jpg');
+  bottom: 56%; 
+  left: 5%;
+}
+
+.campus4 {
+  background-image: url('/app2_billgates.jpg');
+  bottom: 42%; 
+  left: 18%;
+}
+
+.campus5 {
+  background-image: url('/app2_KLR.jpg');
+  bottom: 28%; 
+  left: 5%;
+}
+
+.campus6 {
+  background-image: url('/app2_RTB.jpg');
+  bottom: 14%;
+  left: 18%;
+}
+
+.campus7 {
+  background-image: url('/app2_cotton.jpg');
+  bottom: 0.5%; 
+  left: 5%;
+}
+.canteen1 {
+  background-image: url('/app2_pic8.png');
+  top: 30%; 
+  right: 65%;
+}
+
+.canteen2 {
+  background-image: url('/app2_pencilcanteen.jpg');
+  background-size: 100% 100%;
+  top: 60%; 
+  right: 65%;
+}
+.bus_ground1 {
+  background-image: url('/app2_ground1.jpg'); 
+  bottom: 75%; 
+  right: 53%; 
+  border-radius: 10px;
+}
+.bus_ground2 {
+  background-image: url('/app2_ground2.jpg'); 
+  bottom: 45%; 
+  right: 53%; 
+  border-radius: 10px;
+}
+.bus_ground3 {
+  background-image: url('/public/app2_billgates.jpg'); 
+  bottom: 15%; 
+  right: 53%; 
+  border-radius: 10px;
+}
+
+.technical_hub{
+  background-image: url('/app2_thub.png'); 
+  bottom: 22%; 
+  right: 32%; 
+}
+
+.flag{
+  background-image: url('/app2_pic10.png'); 
+  bottom: 80%; 
+  right: 40%; 
+}
+
+
+.campus8 {
+  background-image: url('/app2_pic1.png');
+  bottom: 84%; 
+  left: 68%; 
+}
+
+.campus9 {
+  background-image: url('/app2_RTB.jpg');
+  bottom: 62%;
+  left: 69%;
+}
+
+.campus10 {
+  background-image: url('/app2_KLR.jpg');
+  bottom: 56%; 
+  left: 85%;
+}
+
+.campus11 {
+  background-image: url('/app2_billgates.jpg');
+  bottom: 10%; 
+  left: 72%;
+}
+.campus12 {
+  background-image: url('/app2_pic4.png');
+  bottom: 32%; 
+  left: 85%;
+}
+.campus13 {
+  background-image: url('/app2_pic3.png');
+  bottom: 12%; 
+  left: 88%;
+}
+
+.campus14 {
+  background-image: url('/app2_pic11.png');
+  bottom: 32%; 
+  left: 72%;
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+  .map_layout {
+    width: 90%;
+    height: 550px;
+  }
+  .map_location {
+    width: 70px;
+    height: 70px;
+  }
+  .map_title {
+    font-size: 3vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .map_layout {
+    width: 100%;
+    height: 500px;
+  }
+  .map_location {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 523px) {
+  .map_layout {
+    width: 100%;
+    height: 450px;
+  }
+  .map_location {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .map_layout {
+    width: 100%;
+    height: 400px;
+  }
+  .map_location {
+    width: 45px;
+    height: 45px;
+  }
+  .map_title {
+    font-size: 4vw;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .map_layout {
+    width: 100%;
+    height: 350px;
+  }
+  .map_location {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .map_layout {
+    width: 100%;
+    height: 300px;
+  }
+  .map_location {
+    width: 35px;
+    height: 35px;
+  }
+  .map_title {
+    font-size: 5vw;
+  }
+}

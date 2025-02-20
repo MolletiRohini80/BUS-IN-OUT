@@ -1,0 +1,762 @@
+.parent{
+    width: 100%;
+    height: 100svh;
+    background-color: #FFFFFF;
+    /* background-image: url('../../../public/busDashboard1.jpeg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat; */
+}
+.header {
+    /* background-color: #f8f9fa;  */
+    /* padding: 20px;  */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  */
+    border-radius: 8px; 
+    opacity: 0; 
+    transform: translateY(-30px); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeInSlide 0.6s forwards; 
+    height: 20%;
+}
+
+/* .header:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+    transition: box-shadow 0.3s ease; 
+} */
+
+.searchContainer input {
+    width: 250px; 
+    padding: 8px; 
+    color: black ;
+    /* margin-right: 20px; */
+    border: 2px solid #002147; 
+    /* border: none; */
+    background-color: #FFFFFF;
+    border-radius: 5px 0 0 5px; 
+    font-size: 16px; 
+    transition: border-color 0.3s, box-shadow 0.3s; 
+    
+}
+.searchBar1{
+    display: none;
+}
+
+
+.searchContainer input:focus {
+    border-color: #002147; 
+    box-shadow: 0 0 5px rgba(5, 5, 23, 0.5);
+    outline: none; 
+    animation: borderGlow 0.5s infinite alternate; 
+    
+}
+.searchFeild{
+    /* width: 30%; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.searchContainer{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    margin: 60px 50px 0 0;
+
+}
+.searchIcon {
+    background: none;
+    border: none;
+    border-radius: 0 5px 5px 0; 
+    cursor: pointer;
+    font-size: 20px; 
+    padding: 0;
+    color: white;
+    background-color: #002147;
+    width: 40px;
+    height: 38px;
+    /* margin-left: 10px;  */
+}
+
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0; 
+        transform: translateY(-30px); 
+    }
+    100% {
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes borderGlow {
+    0% {
+        border-color: #050517; 
+    }
+    100% {
+        border-color: #3b3b47; 
+    }
+}
+.titleName{
+    font-size: 30px;
+    margin-left: 20px;
+    /* text-shadow: 0 0 10px #CF5C36,
+             0 0 10px #CF5C36,
+             0 0 20px #CF5C36,
+             0 0 50px #CF5C36; */
+    /* background: linear-gradient(90deg,#ff4b1f,#ff9068); */
+    background: linear-gradient(90deg,#002147,#050517);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+@media screen and (max-width:540px){
+    .header{
+        height: 15%;
+    }
+    .searchFeild{
+        display: none;
+    }
+    .searchFeild1{
+        width: 100%;
+        height: 10%;
+        display: block;
+        /* justify-content: center !important;
+        align-items: center !important; */
+    }
+    .titleName{
+        font-size: 22px;
+    }
+    
+    .searchContainer input {
+        width: 180px; 
+        padding: 5px; 
+    }
+    .searchIcon{
+        width: 35px;
+        height: 32px;
+    }
+}
+
+.searchType {
+    width: 100%;
+    /* display: flex; */
+    /* flex-direction: column;  */
+    /* background-color: #f9f9f9;  */
+    color: #002147;
+}
+
+.searchType input[type="radio"] {
+    cursor: pointer;
+    appearance: none; /* Removes default radio button style */
+    width: 16px; /* Adjust size of the radio button */
+    height: 16px;
+    border: 2px solid black; /* Black border */
+    border-radius: 50%; /* Makes it round */
+    background-color: white; /* Initial background color */
+    position: relative;
+}
+
+.searchType input[type="radio"]:checked {
+    background-color: #FD752C; /* Changes background to orange when checked */
+    border-color: #FD752C; /* Changes border to orange */
+}
+
+.searchType input[type="radio"]:hover {
+    opacity: 0.7;
+}
+
+.searchType label {
+    cursor: pointer;
+    font-size: 16px;
+    color: #002147;
+}
+
+/* Full screen animation container */
+.animationContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* Set background color to white */
+    z-index: 10;
+    animation: fadeOut 1s forwards;
+    opacity: 1;
+  }
+  
+  .hideAnimation {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-out, visibility 0s 1s;
+  }
+  .suggestionsList {
+    border: 1px solid #ccc;
+    background: black;
+    color: white;
+    position: absolute;
+    width: 290px;
+    top: 63%;
+    z-index: 1;
+    /* max-height: 200px; */
+    overflow-y: auto;
+    height: fit-content;
+  }
+  
+  .suggestion {
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .suggestion:hover {
+    background-color: #f0f0f0;
+    color:black;
+  }
+  
+  /* Example of animation keyframes */
+  @keyframes slideIn {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
+  /* Apply slide-in effect to a welcome message or icon */
+  .welcomeMessage {
+    font-size: 32px;
+    color: #FD752C; /* Your theme color */
+    animation: slideIn 1.5s ease-in-out;
+  }
+  
+  
+
+
+
+.main{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: #FFFFFF; */
+}
+.searchFeild1{
+    width: 100%;
+    height: 20%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    /* flex-direction: column; */
+}
+
+.busInfoByNumber{
+    /* margin: 20px 5px; */
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    /* background-color: #FFFFFF; */
+    flex-wrap: wrap;
+}
+.busInfoDetails{
+    margin: 40px 0;
+    width: 1000px;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    /* background-color: #FFFFFF; */
+}
+.leftSub{
+    width: 65%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: wheat; */
+    gap: 10px;
+    /* padding: 10px; */
+}
+.rightSub{
+    width: 35%;
+    height: 100%;
+    margin: 0 5px;
+}
+.busNum{
+    /* margin: 20px 0 0 20px; */
+    /* background-color:  #ff4b1f ; */
+    width: 48%;
+    height: 230px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 400;
+    /* background: linear-gradient(to top,#f7cebc,#f1b797 ,rgb(252, 252, 196) 20%,transparent); */
+    /* background: linear-gradient(to top, #c1e3ff, #abc7); */
+    /* transform: perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1); */
+    box-shadow: 0 0 10px rgba(100, 100, 100, 0.5), 
+            0 0 20px rgba(211, 213, 215, 0.8);
+    position: relative;
+}
+.busNum:hover{
+    /* box-shadow: 0 4px 10px #CF5C36;  */
+    box-shadow: 
+    0 2px 10px rgba(0, 33, 71, 0.5),  
+    0 2px 10px rgba(0, 33, 71, 0.3);
+    
+}
+.busNumber{
+    width: 100%;
+    color:#050517;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+}
+.busNum img{
+    width: 120px;
+    height: 120px;
+    /* color: white; */
+    position: absolute;
+    right: 2%;
+    bottom: 0%;
+}
+.busNum img:hover{
+    /* scale: 1.2; */
+    width: 110px;
+    height: 110px;
+    right: 1%;
+    bottom: 0%;
+    transition: all 0.2s linear;
+}
+.busNumber .label {
+    color: #033369; 
+    font-size: 22px; 
+    font-weight: 700;
+}
+#bus1{
+    font-size: 40px;
+    margin-top: 3%;
+}
+#live{
+    font-size: 22px;
+    color: #033369;
+    font-weight: 700;
+}
+#time{
+    font-size: 18px;
+    margin-top: 3%;
+}
+#bus2{
+    font-size: 22px;
+    font-weight: 700;
+    color: #033369;
+}
+.number {
+    font-size: 20px; 
+    font-weight: 500; 
+    /* color: #50c99a ;  */
+    color: #FD905C;
+    margin: 1px 0 0 0;
+    /* margin-left: 2px;  */
+    transition: transform 0.3s ease; /* Smooth transition */
+    display: flex;
+}
+.busStatus{
+    width: 90%;
+    height: 470px;
+    border-radius: 5px;
+    color: #050517;
+    box-shadow: 0 0 10px rgba(100, 100, 100, 0.5), 
+            0 0 20px rgba(211, 213, 215, 0.8);
+    padding: 18px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    position: relative;
+}
+.busStatus:hover{
+    box-shadow: 
+    0 2px 10px rgba(0, 33, 71, 0.5),  /* First shadow with some opacity */
+    0 2px 10px rgba(0, 33, 71, 0.3);
+}
+.busStatusD, .busUpdates{
+    width: 100%;
+    /* height: 110px; */
+    font-size: 18px;
+    font-weight: 400;
+    margin: 10px 0;
+}
+.busStatusImage{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 7%;
+    bottom: 7%;
+}
+.busStatusImage img{
+    width: 100%;
+    height: 100%;
+}
+.busStatusImage img:hover{
+    /* scale: 1.2; */
+    width: 110px;
+    height: 110px;
+    right: 5%;
+    bottom: 5%;
+    transition: all 0.2s linear;
+}
+.busInfoDetailsGraph{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0 0 0;
+}
+#busNumberByPlace{
+    font-size: 25px;
+}
+@media screen and (max-width:1024px){
+    .main{
+        height: 60%;
+    }
+    .leftSub{
+        width: 65%;
+        height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+        /* background-color: wheat; */
+        gap: 10px;
+        /* padding: 10px; */
+    }
+    .busInfoDetailsGraph{
+        margin: 20px 0 0 0;
+    }
+    .busNumber .label {
+        font-size: 18px; 
+    }
+    .busNum{
+        height: 170px;
+    }
+    .busStatus{
+        height: 350px;
+    }
+    .number {
+        font-size: 18px;
+    }
+    .busInfoDetails{
+        margin: 20px 0;
+        width: 700px;
+        /* border:1px solid red;     */
+        
+    }
+    .busNum img{
+        height: 90px;
+        width: 90px;
+    }
+    #live{
+        font-size: 18px;
+    }
+    #bus1{
+        font-size: 27px;
+    }
+    .busInfoDetailsGraph{
+        margin-top: 37px;
+    }
+    #time{
+        font-size: 14px;
+        margin: 1%;
+    }
+    #bus2{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width:800px){
+    .header{
+        height: 10%;
+        margin: 2% 0 0 2%;
+    }
+    .titleName{
+        font-size: 25px;
+    }
+    .searchContainer{
+        margin-left: 8%;
+    }
+    .suggestionsList{
+        top: 140%;
+        left: 59.5%;
+    }
+    .busNumber .label { 
+        font-size: 16px; 
+    }
+    .busNumber{
+        height: 150px;
+    }
+    .number {
+        font-size: 18px;
+    }
+    .busInfoByNumber{
+        width: 90%;
+        margin: 20px 5px;
+    }
+    .leftSub{
+        width: 600px;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 2.5%;
+    }
+    .rightSub{
+        width: 300px;
+        height: 100%;
+        margin: 0 5px;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        
+    }
+    .busNum, .busStatusD, .busUpdates{
+        font-size: 14px;
+    }
+    .busInfoDetails{
+        margin: 100px;
+        margin-top: 5%; 
+        /* border: 1px solid black;      */
+
+    }
+    .busInfoDetailsGraph{
+        width: 665px;
+        margin: 40px 2% 0 0;
+    }
+    
+}
+@media screen and (max-width:523px){
+    .busNumber .label {
+        font-size: 14px; 
+    }
+    .number {
+        font-size: 16px;
+    }
+    .busNum, .busStatusD, .busUpdates{
+        font-size: 16px;
+    }
+    .searchFeild1{
+        display: block;
+        /* margin-left: 70px; */
+    }
+    .searchType{
+        margin: 0 0 0 15px;
+    }
+    .searchContainer{
+        margin: 15px;    
+    }
+    .busNum{
+        /* margin: 20px 0 0 20px; */
+        width: 170px;
+        height: 100px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .busInfoDetails{
+        width: 400px;
+        flex-wrap: wrap;
+        margin: 0px;
+    }
+    .busInfoDetailsGraph{
+        width: 100%;
+        /* border: 1px solid red; */
+
+    }
+    .busInfoByNumber{
+        width: 90%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 20px;
+    }
+    .main{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .rightSub{
+        width: 400px;
+        /* height: fit-content; */
+        margin: 10px 0 ;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .busStatus{
+        width: 85%;
+        height: 150px;
+        padding: 0px;
+    }
+    .label{
+        font-size: 12px;
+    }
+    .number{
+        font-size: 17px;
+    }
+}
+@media screen and (max-width:500px){
+    .header{
+        height: 10%;
+    }
+    .searchFeild1{
+        height: 40%;
+    }
+    .searchContainer{
+        margin-left: 10%;
+    }
+    .suggestionsList{
+        width: 218px;
+        /* margin: 5px; */
+        height: 26px;
+        top: 19.5%;
+        left: 5%;
+    }
+    .suggestion{
+        padding: 5px;
+    }
+    .busNumber .label {
+        font-size: 12px; 
+    }
+    .number {
+        font-size: 14px;
+    }
+    .busNum, .busStatusD, .busUpdates{
+        font-size: 12px !important;
+    }
+    
+    .busNum img:hover{
+        /* scale: 1.2; */
+        width: 63px;
+        height: 63px;
+        right: 1%;
+        bottom: 0%;
+        transition: all 0.2s linear;
+    }
+    .busStatus{
+        margin: 10px 0 10px 5px;
+        padding: 10px;
+    }
+    .busStatus{
+        width: 86%;
+    }
+    #time{
+        font-size: 10px;
+    }
+    .busNum img{
+        height: 55px;
+        width: 55px;
+    }
+    .busInfoDetailsGraph{
+        margin: 5px;
+    }
+    #live{
+        font-size: 12px;
+    }
+    
+}
+@media screen and (max-width:375px){
+    .busInfoDetails{
+        width: 375px;
+        flex-wrap: wrap;
+        margin: 0px;
+    }
+    .number {
+        font-size: 15px;
+    }
+    .busNum, .busStatusD, .busUpdates{
+        font-size: 12px !important;
+    }
+    .busNum{
+        width: 170px;
+    }
+    .busNum img{
+        width: 53px;
+        height: 53px;
+        /* color: white; */
+        position: absolute;
+        right: 2%;
+        bottom: 0%;
+    }
+    .busNum img:hover{
+        /* scale: 1.2; */
+        width: 58px;
+        height: 53px;
+        right: 1%;
+        bottom: 0%;
+        transition: all 0.2s linear;
+    }
+    .busStatus{
+        margin: 10px 0px;
+        padding: 10px;
+    }
+    .busStatus{
+        width: 87%;
+    }
+    .busNum{
+        font-size: 120px;
+    }
+}
+@media screen and (max-width:320px){
+    .busInfoDetails{
+        width: 320px;
+        flex-wrap: wrap;
+        margin: 0px;
+    }
+    .label {
+        font-size: 12px;
+    }
+    .number {
+        font-size: 12px;
+    }
+    .busNum{
+        width: 145px;
+        font-size: 10x;
+    }
+    .busInfoDetailsGraph{
+        width:100%;
+     }
+     #live{
+        font-size: 10px;
+     }
+     .busStatusImage{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        right: 5%;
+        bottom: 5%;
+    }
+}

@@ -1,0 +1,1154 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* CSS Code for app2_header.jsx */
+
+
+
+/* Header Styles */
+.header2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f88649;
+  padding: 10px 20px;
+  color: white;
+  width: 100%;
+  height: 80px;
+  position: relative;
+  z-index: 1; /* Ensure header is above other content */
+}
+
+.header-left2 {
+  display: flex;
+  align-items: center;
+}
+
+.logo2 {
+  font-size: 2rem; /* Adjust logo size */
+  margin-right: 10px; /* Space between logo and title */
+}
+
+.header-title2 {
+  font-size: 1.5rem; 
+  font-weight: bold; /* Bold title */
+  color: #002147; 
+
+}
+
+/* Navigation Section */
+.nav-section2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; 
+  gap: 2vw; 
+}
+
+.nav-link2 {
+  color:#002147;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer; 
+  margin-right: 7%;
+  position: relative; 
+  text-decoration: none; 
+}
+
+.nav-link2:hover {
+  color: white; /* Blue */
+}
+
+.nav-link2::after {
+  content: ''; /* Create a pseudo-element */
+  position: absolute; /* Position it absolutely */
+  left: 0; /* Align to the left */
+  bottom: -8px; /* Gap between text and underline */
+  width: 100%; /* Full width */
+  height: 2px; /* Thickness of the underline */
+  background-color: #002147; /* Color of the underline */
+  transform: scaleX(0); /* Start hidden */
+  transform-origin: left; /* Animate from the left */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.nav-link2:hover::after {
+  transform: scaleX(1); 
+}
+
+/* Login Button */
+.login-btn2 {
+  background-color: #002147; /* Blue */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 40%;
+}
+
+.login-btn2:hover {
+  background-color: #002147; 
+  border: 3px solid white;
+}
+
+/* Hamburger Icon */
+.hamburger2 {
+  display: none; /* Initially hidden */
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10; /* Ensure hamburger icon is on top */
+  position: relative;
+}
+
+.hamburger2 .bar2 {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .nav-section2 {
+      display: flex; 
+  }
+  .login-btn2 {
+    margin-left: -9%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-section2 {
+      display: none; /* Hide nav items by default on smaller screens */
+      flex-direction: column;
+      gap: 10px;
+      background-color:rgb(236, 228, 228); /* Transparent shade */
+      position: absolute;
+      top: 80px; /* Adjust based on header height */
+      right: 20px;
+      z-index: 9; /* Ensure nav dropdown appears below the hamburger */
+  }
+  .nav-link2::after {
+    background-color: #FD752C;
+  }
+  .nav-section2.active {
+      display: flex; /* Show nav items when menu is open */
+      width: 120px; /* Fixed width for smaller screens */
+      height: 230px; /* Fixed height */
+      padding: 5px; /* Adjust padding */
+      overflow: hidden; /* Prevent overflow if content exceeds */
+  }
+
+  .hamburger2 {
+      display: flex; /* Show hamburger icon */
+  }
+
+  .header-title2 {
+      font-size: 1rem; /* Adjust title size */
+  }
+
+  .logo2 {
+      font-size: 1.5rem; /* Adjust logo size */
+  }
+}
+
+@media screen and (max-width: 523px) {
+  .nav-section2.active {
+    width: 100px; /* Fixed width for smaller screens */
+    height: 230px;
+  }
+
+  .nav-link2 {
+      font-size: 0.8rem; /* Adjust font size to fit */
+      padding: 2px; /* Reduce padding for nav links */
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .nav-section2.active {
+    width: 100px; /* Fixed width for smaller screens */
+    height: 230px;
+  }
+
+  .nav-link2 {
+      font-size: 0.8rem; /* Adjust font size to fit */
+      padding: 2px; /* Reduce padding for nav links */
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .nav-section2.active {
+    width: 100px; /* Fixed width for smaller screens */
+    height: 230px;
+  }
+
+  .nav-link2{
+      font-size: 0.8rem; /* Adjust font size to fit */
+      padding: 2px; /* Reduce padding for nav links */
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .nav-section2.active {
+    width: 100px; /* Fixed width for smaller screens */
+    height: 230px;
+  }
+
+  .nav-link2 {
+      font-size: 0.8rem; /* Adjust font size to fit */
+      padding: 2px; /* Reduce padding for nav links */
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 320px) {
+  .nav-section2.active {
+    background-color: rgb(236, 228, 228); /* Set background color */
+  }
+
+  .nav-link2 {
+    color: #FD752C; /* Set text color */
+  }
+
+  .nav-link2:hover {
+    color: #002147; /* Change text color on hover */
+  }
+
+  .login-btn2 {
+    background-color: #002147; /* Set button color */
+  }
+
+  .login-btn2:hover {
+    border: 3px solid white; /* Add border on hover */
+  }
+}
+
+
+
+
+/* CSS Code for app2_route.jsx */
+
+
+.app2_route_container {
+  display: flex;
+  width: 100%;
+  height: 90vh;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.app2_left {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.app2_image_background {
+  background-image: url('./app2_pic4.png');
+  background-size: cover;
+  background-position: center;
+  width: 80%;
+  height: 75%;
+  border-radius: 8px;
+  transform: translateX(-100%);
+  animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.app2_right {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  100% {
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.app2_subtitle {
+  font-size: 24px;
+  color: #FD752C;
+  margin-bottom: 10px;
+  font-weight: bold;
+  animation: fadeInSlideUp 0.8s ease forwards; 
+}
+
+
+.app2_title {
+  font-size: 32px;
+  color: #002147;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.app2_description {
+  font-size: 18px;
+  color: #002147;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.app2_features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.app2_feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 30%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 3px solid #002147;
+}
+
+.app2_feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 2px 10px #FF4B1F, 0 2px 10px #FF9068;
+}
+
+.app2_icon {
+  font-size: 32px;
+  color: #FD752C;
+  margin-bottom: 10px;
+}
+.app2_boxtext {
+  color: #002147; 
+  font-size: 1.2rem; 
+  font-weight: bold; 
+}
+
+.app2_explore_button {
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: white; 
+  padding: 0.4em 0.8em;
+  cursor: pointer;
+  font-size: 16px; 
+  border-radius: 30px; 
+  background: #002147; 
+  box-shadow: 6px 6px 12px rgba(0, 34, 71, 0.4), -6px -6px 12px rgba(0, 34, 71, 0.2); 
+  width: 130px;
+  margin-top:5%; 
+}
+
+.app2_explore_button:active {
+  /* color: #666;  */
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+.app2_explore_button:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%; 
+  height: 180%; 
+  background-color:#FD752C;
+  border-radius: 50%; 
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1; 
+}
+
+.app2_explore_button:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%; 
+  width: 160%; 
+  height: 190%;
+  background-color: #FD752C; 
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1; 
+}
+
+.app2_explore_button:hover {
+  color: #ffffff; 
+  border: 1px solid #FD752C; 
+}
+
+.app2_explore_button:hover:before {
+  top: -35%;
+  background-color: #FD752C; 
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8); 
+}
+
+.app2_explore_button:hover:after {
+  top: -45%;
+  background-color: #FD752C;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8); 
+}
+
+
+
+
+@media (max-width: 1024px) {
+  .app2_route_container {
+    padding: 20px;
+    height: auto;
+  }
+
+  .app2_image_background {
+    width: 500px;
+    height:500px ;
+  }
+
+  .app2_subtitle {
+    font-size: 22px;
+  }
+
+  .app2_title {
+    font-size: 28px;
+  }
+
+  .app2_description {
+    font-size: 16px;
+  }
+
+  .app2_feature {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .app2_route_container {
+    flex-direction: column;
+    padding: 20px;
+    height: auto;
+  }
+
+  .app2_left {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .app2_image_background {
+    width: 500px;
+    height:300px ;
+  }
+
+  .app2_right {
+    width: 100%;
+  }
+
+  .app2_subtitle {
+    font-size: 20px;
+  }
+
+  .app2_title {
+    font-size: 24px;
+  }
+
+  .app2_description {
+    font-size: 14px;
+  }
+
+  .app2_feature {
+    width: 48%; 
+  }
+
+  .app2_features {
+    justify-content: space-between; 
+  }
+
+  .app2_explore_button {
+    width: 30%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 523px) {
+  .app2_route_container {
+    padding: 15px;
+    height: auto;
+  }
+
+  .app2_subtitle {
+    font-size: 18px; 
+  }
+
+  .app2_title {
+    font-size: 22px; 
+  }
+
+  .app2_description {
+    font-size: 14px; 
+  }
+  .app2_image_background {
+    width: 300px;
+    height:200px ;
+  }
+  .app2_features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between; 
+  }
+
+  .app2_feature {
+    width: 80%; 
+    height: auto;
+    padding: 10px; 
+    box-sizing: border-box; 
+  }
+
+  .app2_explore_button {
+    width: 60%;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 425px) {
+  .app2_route_container {
+    padding: 15px;
+    height: auto;
+  }
+
+  .app2_subtitle {
+    font-size: 18px;
+  }
+
+  .app2_title {
+    font-size: 22px;
+  }
+
+  .app2_description {
+    font-size: 13px;
+  }
+  .app2_image_background {
+    width: 300px;
+    height:200px ;
+  }
+  .app2_features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    justify-content: space-between;
+  }
+
+  .app2_feature {
+    width: 100%;
+    height: auto;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .app2_explore_button {
+    width: 50%;
+    padding: 10px;
+  }
+}
+
+
+@media (max-width: 375px) {
+  .app2_subtitle {
+    font-size: 16px;
+  }
+
+  .app2_title {
+    font-size: 20px;
+  }
+
+  .app2_description {
+    font-size: 12px;
+  }
+  .app2_image_background {
+    width: 300px;
+    height:200px ;
+  }
+  .app2_feature {
+    width: 100%;
+  }
+
+  .app2_explore_button {
+    width: 50%;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 320px) {
+  .app2_subtitle {
+    font-size: 14px;
+  }
+
+  .app2_title {
+    font-size: 18px;
+  }
+
+  .app2_description {
+    font-size: 12px;
+  }
+
+  .app2_feature {
+    width: 100%;
+  }
+
+  .app2_explore_button {
+    width: 50%;
+    padding: 7px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* CSS Code for app2_home.jsx */
+
+
+.app2_container {
+  display: flex;
+  justify-content: space-around; 
+  padding: 2%;
+  width: 100%;
+  height: 85vh;
+}
+
+.app2_leftSection {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app2_imagesWrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  width: 80%;
+}
+
+.app2_image1,
+.app2_image2,
+.app2_image3 {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+  border-radius: 5px;
+}
+
+.app2_image1 {
+  grid-column: span 2;
+  height: 300px; 
+  background-image: url('./app2_pic1.png');
+}
+
+.app2_image2 {
+  height: 280px; 
+  background-image: url('./app2_pic2.png');
+}
+
+.app2_image3 {
+  height: 280px; 
+  background-image: url('./app2_pic3.png');
+}
+
+.app2_serviceBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.app2_serviceBox:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.app2_serviceText {
+  margin-left: 15px;
+}
+
+.app2_serviceTitle {
+  color: #FD752C;
+  font-size: 18px; 
+  font-weight: bold;
+}
+
+.app2_serviceDescription {
+  color: black;
+  font-size: 14px; 
+}
+
+.app2_rightSection {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.app2_heading {
+  font-size: 32px; 
+  color: #FD752C;
+  font-weight: bold;
+  margin-bottom: 20px;
+  opacity: 0; 
+  animation: pulseAnimation 1.5s forwards; 
+  animation-delay: 0.3s; 
+}
+
+@keyframes pulseAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(1); 
+  }
+  50% {
+    opacity: 1; 
+    transform: scale(1.1); 
+  }
+  100% {
+    opacity: 1; 
+    transform: scale(1);
+  }
+}
+
+.app2_description {
+  font-size: 16px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.app2_checklist {
+  margin-bottom: 20px;
+}
+
+.app2_checkItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.app2_squareCheck {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #FD752C; 
+  border-radius: 50%; 
+  background-color: transparent; 
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app2_squareCheck::after {
+  content: '✔';
+  color: #002147; 
+  font-size: 12px;
+}
+
+.app2_checkText {
+  font-size: 18px;
+  color: black;
+}
+
+.app2_discoverButton {
+  width: 200px; 
+  padding: 1.5em 1.5em; 
+  font-size: 12px; 
+  font-weight: bold;
+  text-transform: uppercase;
+  color:black;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  letter-spacing: 5px;
+  outline: 2px solid #FD752C;
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto; 
+  transition: all 1000ms;
+  text-align: center;
+}
+
+.app2_discoverButton:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #FD752C;
+  box-shadow: 4px 5px 17px -4px #FD752C;
+}
+
+.app2_discoverButton::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color:#FD752C;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+.app2_discoverButton:hover::before {
+  width: 250%;
+}
+
+.app2_image1:hover,
+.app2_image2:hover,
+.app2_image3:hover {
+  transform: scale(1.05);
+}
+
+.app2_additionalContent {
+  margin-top: 20px;
+}
+
+.app2_highlight {
+  margin-bottom: 20px;
+}
+
+.app2_highlightTitle {
+  font-size: 20px; 
+  font-weight: bold;
+  color: #002147;
+}
+
+.app2_highlightDescription {
+  font-size: 16px; 
+  color: black;
+  margin-top: 5px;
+}
+
+@media (max-width: 1024px) {
+  .app2_container {
+    flex-direction: column;
+  }
+
+  .app2_leftSection,
+  .app2_rightSection {
+    width: 100%;
+  }
+
+  .app2_serviceBox {
+    width: 80%;
+    padding: 10px;
+  }
+
+  .app2_heading {
+    font-size: 28px;
+  }
+
+  .app2_serviceTitle {
+    font-size: 16px;
+  }
+
+  .app2_description {
+    font-size: 16px;
+  }
+
+  .app2_checkText {
+    font-size: 16px;
+  }
+
+  .app2_discoverButton {
+    width: 180px;
+    font-size: 11px;
+  }
+
+  .app2_highlightTitle {
+    font-size: 18px;
+  }
+  .app2_image1 {
+    height: 360px; 
+  }
+
+  .app2_image2,
+  .app2_image3 {
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app2_leftSection,
+  .app2_rightSection {
+    width: 100%;
+  }
+
+  .app2_serviceBox {
+    width: 90%;
+  }
+
+  .app2_heading {
+    font-size: 24px;
+  }
+
+  .app2_serviceTitle {
+    font-size: 15px;
+  }
+
+  .app2_description {
+    font-size: 15px;
+  }
+
+  .app2_checkText {
+    font-size: 16px;
+  }
+
+  .app2_discoverButton {
+    width: 160px;
+    font-size: 10px;
+  }
+
+  .app2_highlightTitle {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 523px) {
+  .app2_heading {
+    font-size: 22px;
+  }
+
+  .app2_serviceTitle {
+    font-size: 14px;
+  }
+
+  .app2_description {
+    font-size: 14px;
+  }
+
+  .app2_checkText {
+    font-size: 16px;
+  }
+
+  .app2_discoverButton {
+    width: 140px;
+    font-size: 9px;
+  }
+
+  .app2_highlightTitle {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 425px) {
+  .app2_heading {
+    font-size: 20px;
+  }
+
+  .app2_serviceTitle {
+    font-size: 13px;
+  }
+
+  .app2_description {
+    font-size: 14px;
+  }
+
+  .app2_checkText {
+    font-size: 14px;
+  }
+
+  .app2_discoverButton {
+    width: 120px;
+    font-size: 8px;
+  }
+
+  .app2_highlightTitle {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 375px) {
+  .app2_heading {
+    font-size: 18px;
+  }
+
+  .app2_serviceTitle {
+    font-size: 12px;
+  }
+
+  .app2_description {
+    font-size: 10px;
+  }
+
+  .app2_checkText {
+    font-size: 9px;
+  }
+
+  .app2_discoverButton {
+    width: 100px;
+    font-size: 7px;
+  }
+
+  .app2_highlightTitle {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 320px) {
+  .app2_heading {
+    font-size: 16px;
+  }
+
+  .app2_serviceTitle {
+    font-size: 11px;
+  }
+
+  .app2_description {
+    font-size: 14px;
+  }
+
+  .app2_checkText {
+    font-size: 14px;
+  }
+
+  .app2_discoverButton {
+    width: 90px;
+    font-size: 8px;
+  }
+
+  .app2_highlightTitle {
+    font-size: 14px;
+  }
+  .app2_serviceDescription{
+    font-size:10px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .app2_image1 {
+    height: 280px; 
+  }
+
+  .app2_image2,
+  .app2_image3 {
+    height: 230px; 
+  }
+}
+
+@media (max-width: 523px) {
+  .app2_image1 {
+    height: 160px; 
+  }
+
+  .app2_image2,
+  .app2_image3 {
+    height: 140px; 
+  }
+}
+
+@media (max-width: 425px) {
+  .app2_image1 {
+    height: 140px; 
+  }
+
+  .app2_image2,
+  .app2_image3 {
+    height: 120px; 
+  }
+}
+
+@media (max-width: 375px) {
+  .app2_image1 {
+    height: 120px; 
+  }
+
+  .app2_image2,
+  .app2_image3 {
+    height: 100px; 
+  }
+}
+
+@media (max-width: 320px) {
+  .app2_image1 {
+    height: 130px;
+  }
+
+  .app2_image2,
+  .app2_image3 {
+    height: 80px; 
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

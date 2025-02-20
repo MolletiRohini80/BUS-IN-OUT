@@ -1,0 +1,272 @@
+.main1 {
+    height: 99vh; /* Full viewport height */
+    width: 100%; /* Full viewport width */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevents scroll bars */
+}
+
+/* Animation classes */
+.animate {
+    opacity: 1;
+    animation: flipInX 1.5s ease-out forwards;
+}
+
+/* Keep the rest of your CSS the same */
+
+
+.part1, .part2 {
+    height: 50%; /* Each section takes 50% of the viewport height */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    /* background-color: aqua; */
+}
+
+.part11, .part12 {
+    height: 100%; /* Full height of the parent container */
+    width: 40%;
+    /* background-color: brown; */
+    background-size: contain; /* Maintain aspect ratio */
+    background-repeat: no-repeat;
+    background-position: center center; /* Center image */
+    display: flex; /* Flexbox container */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.part11 {
+    background-image: url('/public/bus-gif-unscreen.gif');
+}
+
+.part12 {
+    background-image: url('https://www.clipartkey.com/mpngs/b/238-2380364_road-map-clipart-black-and-white.png');
+}
+
+.part21, .part22 {
+    height: 100%; /* Full height of the parent container */
+    width: 60%;
+    /* background-color: rgb(120, 171, 171); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.des11, .des21 {
+    height: 55%;
+    width: 90%;
+    /* background-color: aquamarine; */
+}
+
+/* Text styles */
+/* .p11 {
+    height: 25%;
+    width: 100%;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 2.5vw; 
+    color: #002147;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.p12 {
+    height: 45%;
+    width: 100%;
+    background-color: rgb(190, 180, 200);
+    display: flex;
+    font-size: 17px; 
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+} */
+
+/* Animation for text fade-in and slide */
+@keyframes flipInX {
+    0% {
+        opacity: 0;
+        transform: perspective(400px) rotateX(90deg); /* Start with a 90-degree flip */
+    }
+    100% {
+        opacity: 1;
+        transform: perspective(400px) rotateX(0); /* Complete the flip */
+    }
+}
+
+/* Other styles remain the same */
+.p11, .p12, .but1 {
+    opacity: 0; /* Initially hidden */
+}
+  
+  .p11 {
+    height: 25%;
+    width: 100%;
+    /* background-color: blueviolet; */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 2.5vw;
+    color: #002147;
+    font-family: Arial, Helvetica, sans-serif;
+    animation: flipInX 1.5s ease-out;
+    animation-fill-mode: forwards;
+  }
+  
+  .p12 {
+    height: 45%;
+    width: 100%;
+    /* background-color: rgb(190, 180, 200); */
+    display: flex;
+    font-size: 17px;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    animation: flipInX 2s ease-out;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  
+  
+
+.p13 {
+    height: 30%;
+    width: 100%;
+    /* background-color: blueviolet; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.but1 {
+    background-color: #FD752C;
+    height: 70%;
+    width: 20%;
+    color: white;
+    font-size: 1.5vw; /* Responsive font size */
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    margin-top: 1%;
+    border-radius: 7px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media only screen and (max-width: 1024px) {
+    .part1, .part2 {
+        flex-wrap: wrap; /* Ensure content wraps */
+        height: 50vh; /* Set height to half the viewport height */
+    }
+
+    .part11, .part12 {
+        width: 50%; /* Adjust width for smaller screens */
+        height: auto; /* Let height adjust automatically */
+        background-size: contain; /* Keep aspect ratio */
+    }
+    
+    .part21, .part22 {
+        width: 50%; /* Adjust width for smaller screens */
+        height: auto; /* Let height adjust automatically */
+    }
+
+    .p11 {
+        font-size: 32px; /* Adjust font size for smaller screens */
+    }
+
+    .p12 {
+        font-size: 12px;
+    }
+
+    .but1 {
+        width: 25%; /* Increase button width */
+    }
+}
+
+/* Mobile adjustments */
+@media only screen and (max-width: 768px) {
+    .main1 {
+        height: 100vh; /* Ensure full screen height on mobile */
+    }
+
+    .part1, .part2 {
+        flex-wrap: wrap; /* Ensure content wraps */
+        flex-direction: column; /* Stack vertically */
+        height: 50vh; /* Each part takes half of the viewport height */
+    }
+
+    .part11, .part12 {
+        width: 100%; /* Full width on mobile */
+        height: 50%; /* Adjust to half the container height */
+        background-size: contain; /* Keep aspect ratio */
+    }
+
+    .part21, .part22 {
+        width: 100%; /* Full width on mobile */
+        height: 50%; /* Adjust to half the container height */
+    }
+    .des11, .des21 {
+        height: 75%;
+        width: 90%;
+    }
+
+    .p11 {
+        font-size: 4vw; /* Adjust font size for smaller screens */
+    }
+
+    .p12 {
+        font-size: 13px;
+    }
+
+    .but1 {
+        width: 15%; /* Adjust button width for mobile */
+        height: 80%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .main1 {
+        height: 100vh; /* Full viewport height on small screens */
+    }
+
+    .part1, .part2 {
+        flex-wrap: wrap; /* Allow wrapping */
+        height: 50vh; /* Keep parts half of viewport height */
+    }
+
+    .part11, .part12 {
+        width: 100%;
+        height: 45%; /* Adjust height for smaller devices */
+        background-size: contain; /* Keep aspect ratio */
+        background-position: center; /* Ensure centering */
+    }
+
+    .part21, .part22 {
+        height: 55%;
+    }
+
+    .des11, .des21 {
+        margin-right: 1%;
+    }
+
+    .p11 {
+        font-size: 6vw; /* Adjust font size for smaller mobile devices */
+    }
+
+    .p12 {
+        font-size: 10px;
+    }
+
+    .but1 {
+        width: 25%; /* Adjust button size for smaller screens */
+        font-size: 13px;
+        height: 70%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .p12 {
+        font-size: 9px;
+    }
+    .but1 {
+        font-size: 10px;
+    }
+    .des11, .des21 {
+        margin-right: 1%;
+    }
+}

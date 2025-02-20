@@ -1,0 +1,89 @@
+.total {
+    width: 100%;
+    height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wdiv {
+    width: 100%;
+    height: 80%;    
+    background-color: rgb(249, 248, 248);
+    padding: 20px;
+    position: relative;
+    overflow: auto;
+    border-radius: 10px;
+    z-index: 1; /* Updated z-index */
+}
+
+.header {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Changed from space-evenly */
+    position: relative; /* To manage positioning of close button */
+}
+
+.head {
+    width: 90%;
+    height: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.head2 {
+    width: auto; /* Let the size adjust based on content */
+    height: auto; /* Same for height */
+    color: black;
+    font-size: 32px;
+    position: absolute;
+    right: -3%; /* More control over positioning */
+    top: -50%; /* Adjust top positioning */
+    cursor: pointer;
+    z-index: 10; /* Bring it above other elements */
+}
+
+.wdiv2 {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.photos {
+    width: 45%;
+    height: 100%;
+}
+
+.photo1, .photo2 {
+    width: 100%;
+    height: 50%;
+    background-size: 100% 100%;
+    border-radius: 10px;
+}
+
+.photo1 {
+    background-color: rebeccapurple;
+    background-image: url('/public/backClg.jpeg');
+}
+
+.photo2 {
+    background-color: rgb(114, 100, 128);
+    background-image: url('/public/bus1.jpeg');
+    margin-top: 14px;
+}
+
+.matter {
+    width: 50%;
+    height: 100%;
+}
+
+/* Media query for tablets (768px) */
+@media screen and (max-width:500px){
+  .head{
+    font-size: 9px;
+ }
+}

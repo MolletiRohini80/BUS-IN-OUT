@@ -1,0 +1,346 @@
+/* Full screen and container styling */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full screen height */
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1200px; /* Full width with max constraints */
+  height: 80vh; /* Full screen height */
+  background-color: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); /* Increased shadow for depth */
+  overflow: hidden;
+}
+
+/* Form styling */
+.formContainer {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  color: #0e3c70;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.orText {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.socialButtons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.icon {
+  font-size: 25px;
+  color: #002147;
+  cursor: pointer;
+}
+
+.switchButton {
+  margin-top: 20px;
+  background-color: transparent;
+  border: none;
+  color: #00796b;
+  cursor: pointer;
+}
+
+/* Curved section on the right */
+/* Container for the orange part */
+.imageContainer {
+  flex: 1;
+  background: linear-gradient(135deg, #ffb74d 0%, #f57c00 100%);
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center;
+  align-items: center; /* Center-align the items horizontally */
+  position: relative;
+  clip-path: ellipse(100% 90% at 100% 20%); /* Right-facing curve */
+  padding-top: 40px; /* Add space at the top for text */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); /* Box shadow for orange background */
+}
+
+/* Styling for the text */
+.busText {
+  color: white; /* Text color */
+  font-size: 35px; /* Text size */
+  font-weight: bold; /* Bold text */
+  text-align: center; /* Center-align text */
+  margin-bottom: 50px; /* Add space below the text */
+  margin-left: 14%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+  position: absolute;
+  top: 70px; /* Position the text towards the top */
+}
+
+/* Styling for the bus image */
+/* Bus Image Slide-in Animation */
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%); /* Start off the screen */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); /* Slide to the original position */
+    opacity: 1;
+  }
+}
+
+/* Bus Image Floating Animation */
+@keyframes floating {
+  0% {
+    transform: translateY(0); /* Original position */
+  }
+  50% {
+    transform: translateY(-10px); /* Float upward */
+  }
+  100% {
+    transform: translateY(0); /* Back to original position */
+  }
+}
+
+/* Combine the Animations */
+.busImage {
+  width: 70%;
+  position: relative;
+  z-index: 1;
+  margin-top: 80px;
+  margin-left: 24%;
+  opacity: 1;
+  animation: slideIn 2s ease-out forwards, floating 3s ease-in-out infinite 2s; /* First slide in, then start floating */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column-reverse; /* Image below form */
+    height: 100%; /* Let content determine height */
+    width: 90%; /* Slightly reduce width */
+    margin: 0 auto; /* Center the container */
+  }
+
+  .imageContainer {
+    clip-path: ellipse(85% 80% at 100% 20%); /* Smaller ellipse */
+    height: auto; /* Let height adjust */
+    position: relative; /* Positioning for inner elements */
+    padding-bottom: 20px;
+    text-align: center;
+  }
+
+  .busText {
+    font-size: 25px; /* Decrease font size */
+    position: absolute; /* Fix the position of the text */
+    top: 10px; /* Move the text to the top of the container */
+    left: 35%; /* Center the text horizontally */
+    transform: translateX(-50%); /* Adjust for perfect centering */
+    text-align: center; /* Ensure the text stays centered */
+  }
+
+  .busImage {
+    width: 80%; /* Adjust image size for smaller screens */
+    max-width: 300px; /* Maximum width for the image */
+    margin: 50px auto 10px; /* Adjust margin to create space between the text and the image */
+    margin-right: 3%;
+  }
+
+  /* Decreasing form height */
+  .formContainer {
+    padding: 20px; /* Reduce padding */
+    padding-bottom: 9px; /* Less space below form */
+  }
+
+  .formContainer .title {
+    font-size: 20px; /* Smaller title */
+    margin-bottom: 10px; /* Reduce space below title */
+  }
+
+  .formContainer .orText {
+    margin: 10px 0; /* Reduce spacing around "or" text */
+  }
+
+  .formContainer .switchButton {
+    margin-top: 1px; /* Less margin above switch button */
+  }
+
+  /* Reduce input field margins */
+  .formContainer .MuiTextField-root {
+    margin-bottom: 1px; /* Decrease margin below input fields */
+  }
+}
+
+
+@media (max-width: 500px) {
+  .container {
+    flex-direction: column-reverse;
+    height: auto;
+    width: 95%; /* Slightly reduce width for smaller screens */
+    margin: 0 auto;
+  }
+
+  .imageContainer {
+    clip-path: ellipse(80% 75% at 100% 25%);
+    height: auto;
+    padding-bottom: 15px;
+    text-align: center;
+  }
+
+  .busText {
+    font-size: 22px; /* Decrease font size */
+    position: absolute;
+    top: 10px;
+    left: 44%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .busImage {
+    width: 65%; /* Decrease image size */
+    max-width: 220px; /* Set a smaller maximum width */
+    margin-right: 1%; /* Adjust margin for proper spacing */
+  }
+
+  .formContainer {
+    padding: 15px;
+    padding-bottom: 5px;
+  }
+
+  .formContainer .title {
+    font-size: 18px; /* Smaller title */
+    margin-bottom: 10px;
+  }
+
+  .formContainer .orText {
+    margin: 8px 0;
+  }
+
+  .formContainer .switchButton {
+    margin-top: 8px;
+  }
+
+  .formContainer .MuiTextField-root {
+    margin-bottom: 8px;
+  }
+}
+
+@media screen and(max-width: 385px) {
+  .container {
+    flex-direction: column-reverse;
+    height: auto;
+    width: 100%; /* Full width on very small screens */
+    margin: 0 auto;
+  }
+
+  .imageContainer {
+    clip-path: ellipse(75% 70% at 100% 25%);
+    height: auto;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  .busText {
+    font-size: 200px;
+    position: absolute;
+    top: 8px;
+    left: 95%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .busImage {
+    width: 40%;
+    max-width: 240px;
+    /* margin: 30px auto 5px; */
+    margin-left: 20%;
+  }
+
+  .formContainer {
+    padding: 12px;
+    padding-bottom: 5px;
+  }
+
+  .formContainer .title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .formContainer .orText {
+    margin: 6px 0;
+  }
+
+  .formContainer .switchButton {
+    margin-top: 6px;
+  }
+
+  .formContainer .MuiTextField-root {
+    margin-bottom: 6px;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    flex-direction: column-reverse;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .imageContainer {
+    clip-path: ellipse(85% 65% at 100% 30%);
+    height: auto;
+    padding-bottom: 5px;
+    text-align: center;
+  }
+
+  .busText {
+    font-size: 15px;
+    position: absolute;
+    top: 5px;
+    left: 35%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .busImage {
+    width: 45%;
+    max-width: 200px;
+    margin: 20px auto 5px;
+    margin-right: 2%;
+  }
+
+  .formContainer {
+    padding: 10px;
+    padding-bottom: 5px;
+  }
+
+  .formContainer .title {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  .formContainer .orText {
+    margin: 5px 0;
+  }
+
+  .formContainer .switchButton {
+    margin-top: 5px;
+  }
+
+  .formContainer .MuiTextField-root {
+    margin-bottom: 5px;
+  }
+  .icon{
+    font-size: 15px;
+  }
+}

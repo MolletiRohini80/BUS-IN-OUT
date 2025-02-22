@@ -31,15 +31,15 @@ const routes = [
 
 function App() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Router >
+    <>
+      <Router basename='/BUS-IN-OUT/'>
         <Routes>
           {routes.map(({ path, element }, index) => (
             <Route key={index} path={path} element={element} />
           ))}
         </Routes>
       </Router>
-    </Suspense>
+    </>
   );
 }
 

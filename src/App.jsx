@@ -23,7 +23,7 @@ function App() {
     {/* <Fullpage/> */}
     {/* <Apple/> */}
     <Router>
-      <div>
+      
         <Routes>
           <Route path="/" element={<AuthPage />} /> 
           <Route path="/home" element={<Header />} />
@@ -37,7 +37,7 @@ function App() {
           <Route path='/graph' element={<Apple/>}/>
           <Route path='/admin' element={<DriversForm/>}/>
         </Routes>
-      </div>
+    
     </Router>
     {/* <DriversForm/> */}
     </>

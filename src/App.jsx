@@ -1,46 +1,45 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import Router, Route, and Routes
-import AuthPage from './components/pages/signin';
-import CottonBhavan from './components/pages/Bhavans';
-import  F2 from "./components/pages/appli"
-import AboutUs from "./components/pages/AboutUs"
-import Footer from "./components/pages/chat"
-import BusInfo from './components/pages/busInfo';
-import Header from './components/pages/NewCompo1';
-import Bushome from './components/pages/bushome';
-import Fullpage from './components/pages/fullpage';
-// import Application2 from './components/pages/RouteApplication';
-import AppHeader from './components/pages/app2_header';
-import App2Map from './components/pages/app2_map';
-import App2Attractions from './components/pages/app2_attractions';
-import Carder from './components/pages/Card';
-import Graph from './components/pages/Graph';
-import Apple from './components/pages/BusGraph';
-import DriversForm from './components/pages/DriversForm';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Suspense, lazy } from "react";
+
+// Lazy loading components for better performance
+const AuthPage = lazy(() => import("./components/pages/signin"));
+const Header = lazy(() => import("./components/pages/NewCompo1"));
+const Bushome = lazy(() => import("./components/pages/bushome"));
+const AppHeader = lazy(() => import("./components/pages/app2_header"));
+const BusInfo = lazy(() => import("./components/pages/busInfo"));
+const App2Map = lazy(() => import("./components/pages/app2_map"));
+const App2Attractions = lazy(() => import("./components/pages/app2_attractions"));
+const Carder = lazy(() => import("./components/pages/Card"));
+const Fullpage = lazy(() => import("./components/pages/fullpage"));
+const Apple = lazy(() => import("./components/pages/BusGraph"));
+const DriversForm = lazy(() => import("./components/pages/DriversForm"));
+
+// Define routes as an array for better scalability
+const routes = [
+  { path: "/", element: <AuthPage /> },
+  { path: "/home", element: <Header /> },
+  { path: "/Application", element: <Bushome /> },
+  { path: "/App2", element: <AppHeader /> },
+  { path: "/busdash", element: <BusInfo /> },
+  { path: "/Map", element: <App2Map /> },
+  { path: "/attract", element: <App2Attractions /> },
+  { path: "/card", element: <Carder /> },
+  { path: "/incard", element: <Fullpage /> },
+  { path: "/graph", element: <Apple /> },
+  { path: "/admin", element: <DriversForm /> },
+];
 
 function App() {
   return (
-    <>
-    {/* <Fullpage/> */}
-    {/* <Apple/> */}
-    <Router>
-      
+    <Suspense fallback={<div>Loading...</div>}>
+      <Router >
         <Routes>
-          <Route path="/" element={<AuthPage />} /> 
-          <Route path="/home" element={<Header />} />
-          <Route path="/Application" element={<Bushome/>}/>
-          <Route path="/App2" element={<AppHeader/>}/>
-          <Route path='/busdash' element={<BusInfo/>}/>
-          <Route path='/Map' element={<App2Map/>}/>
-          <Route path='/attract' element={<App2Attractions/>}/>
-          <Route path='/card' element={<Carder/>}/>
-          <Route path='/incard' element={<Fullpage/>}/>
-          <Route path='/graph' element={<Apple/>}/>
-          <Route path='/admin' element={<DriversForm/>}/>
+          {routes.map(({ path, element }, index) => (
+            <Route key={index} path={path} element={element} />
+          ))}
         </Routes>
-    
-    </Router>
-    {/* <DriversForm/> */}
-    </>
+      </Router>
+    </Suspense>
   );
 }
 

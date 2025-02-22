@@ -268,7 +268,7 @@ body {
 }
 
 .app2_image_background {
-  background-image: url('./app2_pic4.png');
+  background-image: url('../../../public/app2_pic4.png');
   background-size: cover;
   background-position: center;
   width: 80%;
@@ -695,17 +695,17 @@ body {
 .app2_image1 {
   grid-column: span 2;
   height: 300px; 
-  background-image: url('./app2_pic1.png');
+  background-image: url('../../../public/app2_pic1.png');
 }
 
 .app2_image2 {
   height: 280px; 
-  background-image: url('./app2_pic2.png');
+  background-image: url('../../../public/app2_pic2.png');
 }
 
 .app2_image3 {
   height: 280px; 
-  background-image: url('./app2_pic3.png');
+  background-image: url('../../../public/app2_pic3.png');
 }
 
 .app2_serviceBox {

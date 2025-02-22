@@ -40,7 +40,7 @@ body {
 .about-image {
   width: 100%;
   height: 400px; 
-  background-image: url("./about_clgbus.png"); 
+  background-image: url("../../../public/about_clgbus.png"); 
   background-size: cover;
   background-position: center; 
   border-radius: 10px; 
@@ -881,27 +881,27 @@ body {
 }
 
 .icon-schedule {
-  background-image: url('./about_icon1.png'); 
+  background-image: url('../../../public/about_icon1.png'); 
 }
 
 .icon-safety {
-  background-image: url('./about_icon2.png'); 
+  background-image: url('../../../public/about_icon2.png'); 
 }
 
 .icon-route {
-  background-image: url('./about_icon3.png'); 
+  background-image: url('../../../public/about_icon3.png'); 
 }
 
 .icon-tracking {
-  background-image: url('./about_icon2.png'); 
+  background-image: url('../../../public/about_icon2.png'); 
 }
 
 .icon-sustainability {
-  background-image: url('./about_icon3.png'); 
+  background-image: url('../../../public/about_icon3.png'); 
 }
 
 .icon-emergency {
-  background-image: url('./about_icon1.png'); 
+  background-image: url('../../../public/about_icon1.png'); 
 }
 
 /* Media Queries for Responsiveness */
